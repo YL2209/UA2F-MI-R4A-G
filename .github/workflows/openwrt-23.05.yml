@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt-21.02 immortalwrt-MI-R4A-G
+name: OpenWrt-23.05 immortalwrt-MI-R4A-G
 
 on:
   repository_dispatch:
