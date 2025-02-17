@@ -18,3 +18,7 @@
 
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
+
+
+rm -rf package/feeds/luci/luci-app-ua2f
+git clone https://github.com/YL2209/luci-app-ua2f.git package/feeds/luci/luci-app-ua2f
