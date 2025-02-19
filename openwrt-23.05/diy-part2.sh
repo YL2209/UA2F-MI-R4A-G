@@ -20,3 +20,5 @@
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
+
+git clone https://github.com/YL2209/luci-app-campusnet-login.git package/luci-app-campusnet-login
