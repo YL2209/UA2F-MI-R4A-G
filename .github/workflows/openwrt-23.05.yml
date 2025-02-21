@@ -23,6 +23,7 @@ env:
   CONFIG_FILE: openwrt-23.05/immortalwrt.config
   DIY_P1_SH: openwrt-23.05/diy-part1.sh
   DIY_P2_SH: openwrt-23.05/diy-part2.sh
+  DIY_P3_SH: openwrt-23.05/diy-part3.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -77,6 +78,11 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+
+    - name: 上传 文件
+      run: |
+        chmod +x $DIY_P3_SH
+        $GITHUB_WORKSPACE/$DIY_P3_SH
 
     - name: Download package
       id: package
