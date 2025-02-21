@@ -15,6 +15,9 @@ name: OpenWrt-23.05 immortalwrt-MI-R4A-G
 on:
   repository_dispatch:
   workflow_dispatch:
+  push:
+    paths:
+      - 'openwrt-23.05/**'
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
