@@ -21,4 +21,5 @@
 
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
 
-git clone https://github.com/YL2209/luci-app-campusnet-login.git package/luci-app-campusnet-login
+git clone https://github.com/YL2209/luci-app-ua2f.git package/luci-app-ua2f
+git clone https://github.com/YL2209/luci-app-campus-network-login.git package/luci-app-campus-network-login
