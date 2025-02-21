@@ -47,7 +47,8 @@ sed -i 's/ImmortalWrt/编译时间 $(TZ=UTC-8 date "+%Y.%m.%d") @ NAOKUO/g' incl
 sed -i 's/ImmortalWrt/NAOKUO/g' include/u-boot.mk
 sed -i 's/ImmortalWrt/NAOKUO/g' include/version.mk
 
-
+# 去除 SSH
+cat /dev/null > package/network/services/dropbear/files/dropbear.config
 
 
 
