@@ -10,19 +10,23 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt immortalwrt-MI-R4A-G
+name: OpenWrt-24.10 immortalwrt-MI-R4A-G
 
 on:
   repository_dispatch:
   workflow_dispatch:
+  push:
+    paths:
+      - 'openwrt-24.10/**'
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
-  REPO_BRANCH: openwrt-23.05
-  FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  REPO_BRANCH: openwrt-24.10
+  FEEDS_CONF: $REPO_BRANCH/feeds.conf.default
+  CONFIG_FILE: $REPO_BRANCH/immortalwrt.config
+  DIY_P1_SH: $REPO_BRANCH/diy-part1.sh
+  DIY_P2_SH: $REPO_BRANCH/diy-part2.sh
+  DIY_P3_SH: $REPO_BRANCH/diy-part3.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -77,6 +81,11 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+
+    - name: 上传 文件
+      run: |
+        chmod +x $DIY_P3_SH
+        $GITHUB_WORKSPACE/$DIY_P3_SH
 
     - name: Download package
       id: package
