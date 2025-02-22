@@ -11,3 +11,4 @@
 #
 
 mv openwrt-23.05/src/banner openwrt/package/base-files/files/etc/banner
+mv openwrt-23.05/src/img/bg1.webp openwrt/package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg

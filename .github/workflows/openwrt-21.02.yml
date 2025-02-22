@@ -15,7 +15,11 @@ name: OpenWrt-21.02 immortalwrt-MI-R4A-G
 on:
   repository_dispatch:
   workflow_dispatch:
-
+  push:
+    paths:
+      - 'openwrt-21.02/**'
+      # - '.github/workflows/openwrt-21.02.yml'
+      
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-21.02

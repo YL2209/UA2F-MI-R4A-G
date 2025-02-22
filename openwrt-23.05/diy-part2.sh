@@ -21,6 +21,7 @@
 
 # 修改 argon 为默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
+sed -i 's/.nowrap:not(.td){white-space:nowrap}/.nowrap:not(.td){white-space:unset}/g' package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/css/cascade.css
 
 rm -rf package/feeds/luci/luci-app-ua2f
 git clone https://github.com/YL2209/luci-app-ua2f.git package/luci-app-ua2f
@@ -43,7 +44,7 @@ sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/w
 sed -i '/set wireless.default_${name}.encryption=psk2/a\			set wireless.default_${name}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 修改版本名称
-sed -i 's/ImmortalWrt/编译时间 $(TZ=UTC-8 date "+%Y.%m.%d") @ NAOKUO/g' include/trusted-firmware-a.mk
+# sed -i 's/ImmortalWrt/编译时间 $(TZ=UTC-8 date "+%Y.%m.%d") @ NAOKUO/g' include/trusted-firmware-a.mk
 sed -i 's/ImmortalWrt/NAOKUO/g' include/u-boot.mk
 sed -i 's/ImmortalWrt/NAOKUO/g' include/version.mk
 

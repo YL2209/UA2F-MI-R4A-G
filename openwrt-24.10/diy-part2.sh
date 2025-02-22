@@ -21,6 +21,7 @@
 
 # 修改 argon 为默认主题
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
+sed -i 's/.nowrap:not(.td){white-space:nowrap}/.nowrap:not(.td){white-space:unset}/g' package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/css/cascade.css
 
 rm -rf package/feeds/luci/luci-app-ua2f
 rm -rf package/feeds/luci/luci-app-appfilter
