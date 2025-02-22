@@ -44,11 +44,11 @@ sed -i 's/model = "Xiaomi Mi Router 4A Gigabit Edition"/model = "小米4A千兆�
 sed -i 's/ImmortalWrt/NAOKUO/g' package/base-files/files/bin/config_generate
 
 # 修改默认 wifi 名称 ssid 为 NAOKUO
-sed -i 's/ssid=ImmortalWrt/ssid=NAOKUO/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# sed -i 's/ssid=ImmortalWrt/ssid=NAOKUO/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 修改默认 wifi 加密模式
-sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# sed -i 's/encryption=none/encryption=psk2/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 # 修改默认 wifi 密码 key 为 12345678
-sed -i '/set wireless.default_${name}.encryption=psk2/a\			set wireless.default_${name}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+# sed -i '/set wireless.default_${name}.encryption=psk2/a\			set wireless.default_${name}.key=12345678' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 修改版本名称
 # sed -i 's/ImmortalWrt/编译时间 $(TZ=UTC-8 date "+%Y.%m.%d") @ NAOKUO/g' include/trusted-firmware-a.mk
