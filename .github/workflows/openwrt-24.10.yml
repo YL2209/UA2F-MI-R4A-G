@@ -23,11 +23,11 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-24.10
-  FEEDS_CONF: ${{ REPO_BRANCH }}/feeds.conf.default
-  CONFIG_FILE: ${{ REPO_BRANCH }}/immortalwrt.config
-  DIY_P1_SH: ${{ REPO_BRANCH }}/diy-part1.sh
-  DIY_P2_SH: ${{ REPO_BRANCH }}/diy-part2.sh
-  DIY_P3_SH: ${{ REPO_BRANCH }}/diy-part3.sh
+  FEEDS_CONF: openwrt-24.10/feeds.conf.default
+  CONFIG_FILE: openwrt-24.10/immortalwrt.config
+  DIY_P1_SH: openwrt-24.10/diy-part1.sh
+  DIY_P2_SH: openwrt-24.10/diy-part2.sh
+  DIY_P3_SH: openwrt-24.10/diy-part3.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
