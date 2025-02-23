@@ -33,8 +33,8 @@ git clone https://github.com/YL2209/luci-app-ua2f.git package/luci-app-ua2f
 git clone https://github.com/YL2209/luci-app-campus-network-login.git package/luci-app-campus-network-login
 
 # 修改 UA2F 的版本
-sed -i 's/^PKG_VERSION:=.*/PKG_VERSION:=4.8.3/' package/feeds/packages/ua2f/Makefile
-sed -i 's/^PKG_HASH:=.*/PKG_HASH:=8aa4172559742d269962ae5acc4c644b4820a5a3774ee8cff0c188710bc5e68f/' package/feeds/packages/ua2f/Makefile
+sed -i 's/^PKG_VERSION:=.*/PKG_VERSION:=4.9.2/' package/feeds/packages/ua2f/Makefile
+sed -i 's/^PKG_HASH:=.*/PKG_HASH:=02a20e8fc5d7c3c6999ad6143c2d4496b40b5b85286211f2e2b975e9485b25f0/' package/feeds/packages/ua2f/Makefile
 
 # 增加 UA2F 需要的从 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 awk '/# Netfilter Extensions/{print; getline; if ($0 ~ /^\*/) {print; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"} else {print $0; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"}; next} 1' .config > .config.tmp && mv .config.tmp .config
