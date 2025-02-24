@@ -20,10 +20,12 @@
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
 # 修改 argon 为默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
+sed -i 's/luci-theme-bootstrap/luci-theme-alpha/g' ./feeds/luci/collections/luci-light/Makefile
 # sed -i 's/.nowrap:not(.td){white-space:nowrap}/.nowrap:not(.td){white-space:unset}/g' package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/css/cascade.css
-rm -rf package/feeds/luci/luci-theme-argon
-git clone https://github.com/YL2209/luci-theme-argon.git package/luci-theme-argon
+# rm -rf package/feeds/luci/luci-theme-argon
+# git clone https://github.com/YL2209/luci-theme-argon.git package/luci-theme-argon
+git clone https://github.com/YL2209/luci-theme-alpha.git package/luci-theme-alpha
+git clone https://github.com/YL2209/luci-app-alpha-config.git package/luci-app-alpha-config
 
 rm -rf package/feeds/luci/luci-app-ua2f
 git clone https://github.com/YL2209/luci-app-ua2f.git package/luci-app-ua2f
