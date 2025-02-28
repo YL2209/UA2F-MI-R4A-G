@@ -18,7 +18,7 @@ on:
   push:
     paths:
       - 'openwrt-21.02/**'
-      # - '.github/workflows/openwrt-21.02.yml'
+      - '.github/workflows/openwrt-21.02.yml'
       
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
