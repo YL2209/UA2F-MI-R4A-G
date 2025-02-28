@@ -19,7 +19,7 @@ on:
     paths:
       - 'openwrt-21.02/**'
       - '.github/workflows/openwrt-21.02.yml'
-      
+
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-21.02
@@ -27,6 +27,7 @@ env:
   CONFIG_FILE: openwrt-21.02/immortalwrt.config
   DIY_P1_SH: openwrt-21.02/diy-part1.sh
   DIY_P2_SH: openwrt-21.02/diy-part2.sh
+  DIY_P3_SH: openwrt-21.02/diy-part3.sh
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -81,6 +82,11 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+
+    - name: 上传 文件
+      run: |
+        chmod +x $DIY_P3_SH
+        $GITHUB_WORKSPACE/$DIY_P3_SH
 
     - name: Download package
       id: package
