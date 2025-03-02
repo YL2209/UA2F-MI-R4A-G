@@ -38,6 +38,8 @@ sed -i 's/^PKG_HASH:=.*/PKG_HASH:=02a20e8fc5d7c3c6999ad6143c2d4496b40b5b85286211
 # 增加 UA2F 需要的从 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 awk '/# Netfilter Extensions/{print; getline; if ($0 ~ /^\*/) {print; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"} else {print $0; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"}; next} 1' .config > .config.tmp && mv .config.tmp .config
 
+git clone https://github.com/YL2209/luci-app-campus-network-mac.git package/luci-app-campus-network-mac
+
 #更改主机型号，支持中文。 
 sed -i 's/model = "Xiaomi Mi Router 4A Gigabit Edition"/model = "小米4A千兆版校园网专用"/g' target/linux/ramips/dts/mt7621_xiaomi_mi-router-4a-gigabit.dts
 
