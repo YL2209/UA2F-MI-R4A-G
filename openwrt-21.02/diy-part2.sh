@@ -17,7 +17,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 # git clone https://github.com/CHN-beta/rkp-ipid.git package/rkp-ipid
 
 # 修改 UA2F 的版本
-cp openwrt-21.02/src/ua2f/Makefile package/feeds/packages/ua2f/Makefile
+mv openwrt-21.02/src/ua2f/Makefile package/feeds/packages/ua2f/Makefile
 
 # 增加 UA2F 需要的从 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 awk '/# Netfilter Extensions/{print; getline; if ($0 ~ /^\*/) {print; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"} else {print $0; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"}; next} 1' .config > .config.tmp && mv .config.tmp .config
