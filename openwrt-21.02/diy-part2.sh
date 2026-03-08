@@ -17,7 +17,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 # git clone https://github.com/CHN-beta/rkp-ipid.git package/rkp-ipid
 
 # 修改 UA2F 的版本
-# mv openwrt-21.02/src/ua2f/Makefile package/feeds/packages/ua2f/Makefile
 rm -rf package/feeds/packages/ua2f
 git clone https://github.com/Zxilly/UA2F -b v4.10.2 package/ua2f
 
