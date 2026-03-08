@@ -18,7 +18,7 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci
 
 # 修改 UA2F 的版本
 rm -rf package/feeds/packages/ua2f
-git clone https://github.com/Zxilly/UA2F -b v4.10.2 package/ua2f
+git clone https://github.com/Zxilly/UA2F -b v4.9.2 package/ua2f
 
 # 增加 UA2F 需要的从 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 awk '/# Netfilter Extensions/{print; getline; if ($0 ~ /^\*/) {print; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"} else {print $0; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"}; next} 1' .config > .config.tmp && mv .config.tmp .config
